@@ -349,6 +349,30 @@ class Celesta(KeyboardInstrument):
         self.instrumentAbbreviation = 'Clst'
         self.midiProgram = 8
         self.instrumentSound = 'keyboard.celesta'
+        
+# ------------------------------------------------------------------------------
+class SynthesizerInstrument(Instrument):
+    def __init__(self):
+        super().__init__()
+        
+        self.lowestNote = pitch.Pitch('A0')
+        self.highestNote = pitch.Pitch('C8')
+        
+class BrassSynth(SynthesizerInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Brass Synthesizer'
+        self.instrumentAbbreviation = 'Synth'
+        self.midiProgram = 62
+
+class StringSynth(SynthesizerInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'String Synthesizer'
+        self.instrumentAbbreviation = 'Synth'
+        self.midiProgram = 50
 
 # ------------------------------------------------------------------------------
 class Organ(Instrument):
