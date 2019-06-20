@@ -351,28 +351,98 @@ class Celesta(KeyboardInstrument):
         self.instrumentSound = 'keyboard.celesta'
         
 # ------------------------------------------------------------------------------
-class SynthesizerInstrument(Instrument):
+class SynthInstrument(Instrument):
     def __init__(self):
         super().__init__()
-        
+
+        self.instrumentAbbreviation = 'Synth'
         self.lowestNote = pitch.Pitch('A0')
         self.highestNote = pitch.Pitch('C8')
+
+class BassSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Bass Synthesizer'
+        self.midiProgram = 38
         
-class BrassSynth(SynthesizerInstrument):
+class BrassSynth(SynthInstrument):
     def __init__(self):
         super().__init__()
 
         self.instrumentName = 'Brass Synthesizer'
-        self.instrumentAbbreviation = 'Synth'
         self.midiProgram = 62
 
-class StringSynth(SynthesizerInstrument):
+class StringSynth(SynthInstrument):
     def __init__(self):
         super().__init__()
 
         self.instrumentName = 'String Synthesizer'
-        self.instrumentAbbreviation = 'Synth'
         self.midiProgram = 50
+
+class VoiceSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Voice Synthesizer'
+        self.midiProgram = 54
+
+# ------------------------------------------------------------------------------
+class SquareLeadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Square Synthesizer'
+        self.midiProgram = 80
+        
+class SawtoothLeadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Sawtooth Synthesizer'
+        self.midiProgram = 81
+
+class CalliopeLeadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Calliope Synthesizer'
+        self.midiProgram = 82
+
+class ChiffLeadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Chiff Synthesizer'
+        self.midiProgram = 83
+
+class CharangLeadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Charang Synthesizer'
+        self.midiProgram = 84
+
+class VoiceLeadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Voice Lead Synthesizer'
+        self.midiProgram = 85
+
+class FifthsLeadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Fifths Synthesizer'
+        self.midiProgram = 86
+
+class BassLeadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Bass Lead Synthesizer'
+        self.midiProgram = 87
 
 # ------------------------------------------------------------------------------
 class Organ(Instrument):
