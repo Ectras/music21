@@ -1826,7 +1826,9 @@ def channelInstrumentData(s : stream.Stream,
         setAnInstrument = False
         for inst in instrumentStream:
             if inst.midiProgram not in allUniqueInstruments:
-                allUniqueInstruments.append(inst.midiProgram)
+                allUniqueInstruments.append((inst.midiProgram, inst.midiChannel))
+                if inst.midiChannel in allChannels:
+                    allChannels.remove(inst.midiChannel) # remove already assigned midi channels from available list
             setAnInstrument = True
 
         if not setAnInstrument:
@@ -1841,14 +1843,21 @@ def channelInstrumentData(s : stream.Stream,
     # we just cannot use it and will take modulus later
     channelsAssigned = []
 
-    for i, iPgm in enumerate(allUniqueInstruments):
+    i = 0
+    for iInst in allUniqueInstruments:
+        iPgm, iChn = iInst
         # the key is the program number; the values is the start channel
-        if i < len(allChannels) - 1:  # save at least one dynamic channel
-            channelByInstrument[iPgm] = allChannels[i]
-            channelsAssigned.append(allChannels[i])
-        else:  # just use 1, and deal with the mess: cannot allocate
-            channelByInstrument[iPgm] = allChannels[0]
-            channelsAssigned.append(allChannels[0])
+        if iChn is not None:
+            channelByInstrument[iPgm] = iChn
+            channelsAssigned.append(iChn)
+        else:
+            if i < len(allChannels) - 1:  # save at least one dynamic channel
+                channelByInstrument[iPgm] = allChannels[i]
+                channelsAssigned.append(allChannels[i])
+            else:  # just use 1, and deal with the mess: cannot allocate
+                channelByInstrument[iPgm] = allChannels[0]
+                channelsAssigned.append(allChannels[0])
+            i += 1
 
     # get the dynamic channels, or those not assigned
     for ch in allChannels:
