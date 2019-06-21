@@ -1090,6 +1090,7 @@ class UnpitchedPercussion(Percussion):
         super().__init__()
         self._modifier = None
         self._modifierToPercMapPitch = {}
+        self.midiChannel = 10
 
     def _getModifier(self):
         return self._modifier
