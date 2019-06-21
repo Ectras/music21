@@ -57,7 +57,10 @@ environLocal = environment.Environment(_MOD)
 # good midi reference:
 # http://www.sonicspot.com/guide/midifiles.html
 
-
+def nonesorter(a):
+        if not a:
+            return -1
+        return a
 
 # ------------------------------------------------------------------------------
 class EnumerationException(exceptions21.Music21Exception):
@@ -1413,11 +1416,6 @@ class MidiTrack(prebase.ProtoM21Object):
             raise MidiException('bad channel value: %s' % value)
         for e in self.events:
             e.channel = value
-
-    def nonesorter(a):
-        if not a:
-            return -1
-        return a
 
     def getChannels(self):
         '''
