@@ -1414,6 +1414,11 @@ class MidiTrack(prebase.ProtoM21Object):
         for e in self.events:
             e.channel = value
 
+    def nonesorter(a):
+        if not a:
+            return -1
+        return a
+
     def getChannels(self):
         '''
         Get all channels used in this Track (sorted)
@@ -1432,7 +1437,7 @@ class MidiTrack(prebase.ProtoM21Object):
         for e in self.events:
             if e.channel not in post:
                 post.append(e.channel)
-        return sorted(post)
+        return sorted(post, key=nonesorter)
 
     def getProgramChanges(self):
         '''
