@@ -692,7 +692,10 @@ def midiEventsToInstrument(eventList):
 
     from music21 import instrument
     try:
-        i = instrument.instrumentFromMidiProgram(event.data)
+        if event.channel == 10:
+            i = instrument.UnpitchedPercussion() #TODO: select with with percussion mapper?
+        else:
+            i = instrument.instrumentFromMidiProgram(event.data)
     except instrument.InstrumentException:
         i = instrument.Instrument()
     return i
