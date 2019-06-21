@@ -445,6 +445,63 @@ class BassLeadSynth(SynthInstrument):
         self.midiProgram = 87
 
 # ------------------------------------------------------------------------------
+class FantasiaPadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Fantasia Synthesizer'
+        self.midiProgram = 88
+        
+class WarmPadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Warm Synthesizer'
+        self.midiProgram = 89
+        
+class PolyPadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Poly Synthesizer'
+        self.midiProgram = 90
+        
+class ChoirPadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Choir Synthesizer'
+        self.midiProgram = 91
+        
+class BowedPadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Bowed Synthesizer'
+        self.midiProgram = 92
+        
+class MetallicPadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Metallic Synthesizer'
+        self.midiProgram = 93
+        
+class HaloPadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Halo Synthesizer'
+        self.midiProgram = 94
+        
+class SweepPadSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Sweep Synthesizer'
+        self.midiProgram = 95
+        
+# ------------------------------------------------------------------------------
 class Organ(Instrument):
     def __init__(self):
         super().__init__()
