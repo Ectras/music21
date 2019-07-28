@@ -317,6 +317,17 @@ class Piano(KeyboardInstrument):
         self.names = {'de': ['Klavier', 'Pianoforte'],
                       'en': ['Piano', 'Pianoforte']}
 
+class BrightPiano(KeyboardInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Bright Piano'
+        self.instrumentAbbreviation = 'Pno'
+        self.midiProgram = 1
+
+        self.lowestNote = pitch.Pitch('A0')
+        self.highestNote = pitch.Pitch('C8')
+
 class Harpsichord(KeyboardInstrument):
     def __init__(self):
         super().__init__()
@@ -500,6 +511,63 @@ class SweepPadSynth(SynthInstrument):
 
         self.instrumentName = 'Sweep Synthesizer'
         self.midiProgram = 95
+
+# ------------------------------------------------------------------------------
+class RainSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Rain Synthesizer'
+        self.midiProgram = 96
+
+class SoundtrackSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Soundtrack Synthesizer'
+        self.midiProgram = 97
+
+class CrystalSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Crystal Synthesizer'
+        self.midiProgram = 98
+
+class AtmosphereSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Atmosphere Synthesizer'
+        self.midiProgram = 99
+
+class BrightnessSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Brightness Synthesizer'
+        self.midiProgram = 100
+
+class GoblinsSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Goblins Synthesizer'
+        self.midiProgram = 101
+
+class EchoesSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Echoes Synthesizer'
+        self.midiProgram = 102
+
+class SciFiSynth(SynthInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'SciFi Synthesizer'
+        self.midiProgram = 103
         
 # ------------------------------------------------------------------------------
 class Organ(Instrument):
@@ -724,6 +792,24 @@ class ElectricGuitar(Guitar):
         self.midiProgram = 26
         self.instrumentSound = 'pluck.guitar.electric'
 
+class OverdrivenGuitar(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Overdriven Guitar'
+        self.instrumentAbbreviation = 'Ovdr Gtr'
+        self.midiProgram = 29
+        self.instrumentSound = 'pluck.guitar.electric'
+
+class DistortionGuitar(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Distortion Guitar'
+        self.instrumentAbbreviation = 'Dist Gtr'
+        self.midiProgram = 30
+        self.instrumentSound = 'pluck.guitar.electric'
+
 class AcousticBass(Guitar):
     def __init__(self):
         super().__init__()
@@ -743,6 +829,18 @@ class ElectricBass(Guitar):
         self.instrumentName = 'Electric Bass'
         self.instrumentAbbreviation = 'Elec b'
         self.midiProgram = 33
+        self.instrumentSound = 'pluck.bass.electric'
+
+        self.lowestNote = pitch.Pitch('E1')
+        self._stringPitches = ['E1', 'A1', 'D2', 'G2']
+
+class ElectricBassPicked(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Electric Bass Picked'
+        self.instrumentAbbreviation = 'Elec b'
+        self.midiProgram = 34
         self.instrumentSound = 'pluck.bass.electric'
 
         self.lowestNote = pitch.Pitch('E1')
