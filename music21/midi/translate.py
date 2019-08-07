@@ -1848,7 +1848,10 @@ def channelInstrumentData(s : stream.Stream,
 
     i = 0
     for iInst in allUniqueInstruments:
-        iPgm, iChn = iInst
+        if iInst is None:
+            iPgm, iChn = None, None
+        else:
+            iPgm, iChn = iInst
         # the key is the program number; the values is the start channel
         if iChn is not None:
             channelByInstrument[iPgm] = iChn

@@ -328,6 +328,28 @@ class BrightPiano(KeyboardInstrument):
         self.lowestNote = pitch.Pitch('A0')
         self.highestNote = pitch.Pitch('C8')
 
+class ElectricGrandPiano(KeyboardInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Electric Grand Piano'
+        self.instrumentAbbreviation = 'E Pno'
+        self.midiProgram = 2
+
+        self.lowestNote = pitch.Pitch('A0')
+        self.highestNote = pitch.Pitch('C8')
+
+class ElectricPiano(KeyboardInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Electric Piano'
+        self.instrumentAbbreviation = 'E Pno'
+        self.midiProgram = 4
+
+        self.lowestNote = pitch.Pitch('A0')
+        self.highestNote = pitch.Pitch('C8')
+
 class Harpsichord(KeyboardInstrument):
     def __init__(self):
         super().__init__()
@@ -599,6 +621,17 @@ class ElectricOrgan(Organ):
         self.lowestNote = pitch.Pitch('C2')
         self.highestNote = pitch.Pitch('C6')
 
+class PercussiveOrgan(Organ):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Percussive Organ'
+        self.instrumentAbbreviation = 'Perc Org'
+        self.midiProgram = 17
+
+        self.lowestNote = pitch.Pitch('C2')
+        self.highestNote = pitch.Pitch('C6')
+
 class ReedOrgan(Organ):
     def __init__(self):
         super().__init__()
@@ -749,6 +782,17 @@ class Contrabass(StringInstrument):
         self._stringPitches = ['E1', 'A1', 'D2', 'G2']
         self.transposition = interval.Interval('P-8')
 
+class PizzicatoStrings(StringInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Pizzicato Strings'
+        self.instrumentAbbreviation = 'Piz'
+        self.midiProgram = 45
+
+        self.lowestNote = pitch.Pitch('G3')
+        self._stringPitches = ['G3', 'D4', 'A4', 'E5']
+
 class Harp(StringInstrument):
     def __init__(self):
         super().__init__()
@@ -760,6 +804,28 @@ class Harp(StringInstrument):
 
         self.lowestNote = pitch.Pitch('C1')
         self.highestNote = pitch.Pitch('G#7')
+
+class SyntheticStrings(StringInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Synthetic Strings'
+        self.instrumentAbbreviation = 'Syn s'
+        self.midiProgram = 50
+
+        self.lowestNote = pitch.Pitch('G3')
+        self._stringPitches = ['G3', 'D4', 'A4', 'E5']
+
+class SyntheticStrings2(StringInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Synthetic Strings'
+        self.instrumentAbbreviation = 'Syn s'
+        self.midiProgram = 51
+
+        self.lowestNote = pitch.Pitch('G3')
+        self._stringPitches = ['G3', 'D4', 'A4', 'E5']
 
 
 class Guitar(StringInstrument):
@@ -783,6 +849,15 @@ class AcousticGuitar(Guitar):
         self.midiProgram = 24
         self.instrumentSound = 'pluck.guitar.acoustic'
 
+class AcousticSteelGuitar(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Acoustic Guitar'
+        self.instrumentAbbreviation = 'Ac Gtr'
+        self.midiProgram = 25
+        self.instrumentSound = 'pluck.guitar.acoustic'
+
 class ElectricGuitar(Guitar):
     def __init__(self):
         super().__init__()
@@ -790,6 +865,24 @@ class ElectricGuitar(Guitar):
         self.instrumentName = 'Electric Guitar'
         self.instrumentAbbreviation = 'Elec Gtr'
         self.midiProgram = 26
+        self.instrumentSound = 'pluck.guitar.electric'
+
+class ElectricCleanGuitar(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Electric Guitar'
+        self.instrumentAbbreviation = 'Elec Gtr'
+        self.midiProgram = 27
+        self.instrumentSound = 'pluck.guitar.electric'
+
+class ElectricMutedGuitar(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Electric Guitar'
+        self.instrumentAbbreviation = 'Elec Gtr'
+        self.midiProgram = 28
         self.instrumentSound = 'pluck.guitar.electric'
 
 class OverdrivenGuitar(Guitar):
@@ -858,6 +951,43 @@ class FretlessBass(Guitar):
         self.lowestNote = pitch.Pitch('E1')
         self._stringPitches = ['E1', 'A1', 'D2', 'G2']
 
+class SlapBass(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Slap Bass'
+        self.instrumentAbbreviation = 'Slap b'
+        self.midiProgram = 36
+
+        self.lowestNote = pitch.Pitch('E1')
+        self._stringPitches = ['E1', 'A1', 'D2', 'G2']
+
+class SlapBass2(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Slap Bass'
+        self.instrumentAbbreviation = 'Slap b'
+        self.midiProgram = 37
+
+        self.lowestNote = pitch.Pitch('E1')
+        self._stringPitches = ['E1', 'A1', 'D2', 'G2']
+
+class SynthBass(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Synth Bass'
+        self.instrumentAbbreviation = 'Synth b'
+        self.midiProgram = 38
+
+class SynthBass2(Guitar):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Synth Bass'
+        self.instrumentAbbreviation = 'Synth b'
+        self.midiProgram = 39
 
 class Mandolin(StringInstrument):
     def __init__(self):
@@ -911,6 +1041,14 @@ class Sitar(StringInstrument):
         self.instrumentAbbreviation = 'Sit'
         self.instrumentSound = 'pluck.sitar'
         self.midiProgram = 104
+
+class Fiddle(StringInstrument):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Fiddle'
+        self.instrumentAbbreviation = 'Fdl'
+        self.midiProgram = 110
 
 class Shamisen(StringInstrument):
     def __init__(self):
@@ -1699,6 +1837,14 @@ class Taiko(UnpitchedPercussion):
         self.instrumentSound = 'drum.taiko'
         self.midiProgram = 116
 
+class SynthDrum(UnpitchedPercussion):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'SynthDrum'
+        self.instrumentAbbreviation = 'Synth d'
+        self.midiProgram = 118
+
 class Tambourine(UnpitchedPercussion):
     def __init__(self):
         super().__init__()
@@ -1750,7 +1896,48 @@ class WindMachine(UnpitchedPercussion):
         self.instrumentSound = 'effect.wind'
 
 # -----------------------------------------------------
+class SFX(Instrument):
+    def __init__(self):
+        super().__init__()
 
+        self.instrumentAbbreviation = 'SFX'
+
+class FretNoise(SFX):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Fret Noise'
+        self.midiProgram = 120
+
+class Seashore(SFX):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Seashore'
+        self.midiProgram = 122
+
+class BirdTweet(SFX):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Bird Tweet'
+        self.midiProgram = 123
+
+class TelephoneRing(SFX):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Telephone Ring'
+        self.midiProgram = 124
+
+class Gunshot(SFX):
+    def __init__(self):
+        super().__init__()
+
+        self.instrumentName = 'Gunshot'
+        self.midiProgram = 127
+
+# -----------------------------------------------------
 class Vocalist(Instrument):
     '''
     n.b. called Vocalist to not be confused with stream.Voice
